@@ -24,4 +24,11 @@ export class TodosComponent implements OnInit {
     // Removes from the database
     this.todoService.deleteTodo(todo).subscribe();
   }
+
+  addTodo(todo:Todo) {
+    // Adds to the UI
+    this.todoService.addTodo(todo).subscribe(todo => {
+      this.todos.push(todo);
+    }) 
+  }
 }
